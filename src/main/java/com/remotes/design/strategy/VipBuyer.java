@@ -13,6 +13,11 @@ import java.math.BigDecimal;
  */
 public class VipBuyer implements Buyer {
 
+    @Override
+    public String getType() {
+        return "VipBuyer";
+    }
+
     /**
      * 如果用户的超级会员已经到期了，并且到期时间在一周内，那么就对用户的单笔订单按照超级会员进行折扣，
      * 并在收银台进行强提醒，引导用户再次开通会员，而且折扣只进行一次。

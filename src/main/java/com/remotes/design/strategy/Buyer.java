@@ -13,6 +13,8 @@ import java.math.BigDecimal;
  */
 public interface Buyer {
 
+    public String getType();
+
     /**
      * 计算应付价格
      * @param orderPrice 订单价格

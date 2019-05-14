@@ -16,6 +16,11 @@ public class ParticularlyVipBuyer implements Buyer {
     private final BigDecimal discountPrice = new BigDecimal(30);
     private final BigDecimal discount = new BigDecimal(0.7);
 
+    @Override
+    public String getType() {
+        return "ParticularlyVipBuyer";
+    }
+
     /**
      * 专属会员订单价格>30, 7折优惠
      * @param orderPrice 订单价格

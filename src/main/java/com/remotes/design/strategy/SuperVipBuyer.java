@@ -16,6 +16,11 @@ public class SuperVipBuyer implements Buyer {
     private final BigDecimal discount = new BigDecimal(0.7);
 
 
+    @Override
+    public String getType() {
+        return "SuperVipBuyer";
+    }
+
     /**
      * 超级会员折扣8折
      * @param orderPrice 订单价格
