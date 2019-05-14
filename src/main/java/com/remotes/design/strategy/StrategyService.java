@@ -27,13 +27,13 @@ public class StrategyService {
     private List<Buyer> buyers;
     Logger logger  = LoggerFactory.getLogger(StrategyService.class);
 
-    public double strategy(String inputType) {
+    public double strategy(String buyerType) {
         // 创建上下文
         Cashier cashier = null;
         // 选择并创建需要使用的策略对象
         Buyer strategy = null;
         for (Buyer buyer: buyers){
-            if(buyer.getType().equals(inputType)){
+            if(buyer.getType().equals(buyerType)){
                 strategy = buyer;
                 break;
             }

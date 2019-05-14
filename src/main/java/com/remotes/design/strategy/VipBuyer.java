@@ -1,5 +1,7 @@
 package com.remotes.design.strategy;
 
+import com.remotes.design.constant.Constants;
+
 import java.math.BigDecimal;
 
 /**
@@ -15,7 +17,7 @@ public class VipBuyer implements Buyer {
 
     @Override
     public String getType() {
-        return "VipBuyer";
+        return Constants.Strategy.VipBuyer.getCode();
     }
 
     /**
