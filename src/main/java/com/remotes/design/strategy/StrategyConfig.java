@@ -1,10 +1,13 @@
 package com.remotes.design.strategy;
 
+import com.remotes.design.constant.Constants;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author yuan.chen
@@ -12,23 +15,34 @@ import java.util.List;
  * @company INGEEK
  * @Date 2019-05-14
  */
-@Configuration
 public class StrategyConfig {
 
 
+
+    private static Map<String, Buyer> result ;
+
+    static {
+        result = new HashMap<>();
+        Buyer buyer = new ParticularlyVipBuyer();
+        result.put(Constants.Strategy.ParticularlyVipBuyer.getCode(), buyer);
+        buyer = new SuperVipBuyer();
+        result.put(Constants.Strategy.SuperVipBuyer.getCode(), buyer);
+        buyer = new VipBuyer();
+        result.put(Constants.Strategy.VipBuyer.getCode(), buyer);
+    }
+
+
     /**
-     * 配置所有策略模式
+     * 通过指定的类型， 选择指定的策略
+     * @param code
      * @return
      */
-    @Bean(name = "buyers")
-    public List<Buyer> initBuyer(){
-        List<Buyer> buyers = new ArrayList();
-        Buyer buyer = new ParticularlyVipBuyer();
-        buyers.add(buyer);
-        buyer = new SuperVipBuyer();
-        buyers.add(buyer);
-        buyer = new VipBuyer();
-        buyers.add(buyer);
-        return buyers;
+    public static Buyer getInstance(String code){
+        Buyer buyer = null;
+        buyer = result.get(code);
+        if(buyer == null){
+            buyer = result.get(Constants.Strategy.ParticularlyVipBuyer.getCode());
+        }
+        return buyer;
     }
 }

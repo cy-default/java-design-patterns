@@ -19,25 +19,13 @@ import java.util.List;
 @Service
 public class StrategyService {
 
-    /**
-     * 加载策略模式
-     */
-    @Autowired
-    @Qualifier("buyers")
-    private List<Buyer> buyers;
     Logger logger  = LoggerFactory.getLogger(StrategyService.class);
 
     public double strategy(String buyerType) {
         // 创建上下文
         Cashier cashier = null;
-        // 选择并创建需要使用的策略对象
-        Buyer strategy = null;
-        for (Buyer buyer: buyers){
-            if(buyer.getType().equals(buyerType)){
-                strategy = buyer;
-                break;
-            }
-        }
+        // 选择需要使用的策略对象
+        Buyer strategy =  StrategyConfig.getInstance(buyerType);;
         cashier = new Cashier(strategy);
         // 计算价格
         BigDecimal quote = cashier.quote(new BigDecimal(300));

@@ -13,6 +13,10 @@ import java.math.BigDecimal;
  */
 public interface Buyer {
 
+    /**
+     * 获取类别
+     * @return
+     */
     public String getType();
 
     /**
