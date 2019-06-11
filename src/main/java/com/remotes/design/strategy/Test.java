@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import java.math.BigDecimal;
 
 /**
+ * 策略模式
  * @author yuan.chen
  * @email chen.yuan135@chinaredstar.com
  * @Date 2019-06-11
