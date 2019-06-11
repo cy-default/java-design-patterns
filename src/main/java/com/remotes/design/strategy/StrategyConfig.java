@@ -1,12 +1,7 @@
 package com.remotes.design.strategy;
 
 import com.remotes.design.constant.Constants;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**

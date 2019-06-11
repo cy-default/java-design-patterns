@@ -1,9 +1,6 @@
 package com.remotes.design.strategy;
 
 import com.remotes.design.constant.Constants;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.math.BigDecimal;
 
 /**
@@ -13,7 +10,6 @@ import java.math.BigDecimal;
  * @Date 2019-06-11
  */
 public class Test {
-    private static Logger logger = LoggerFactory.getLogger(Test.class);
 
     public static void main(String[] args) {
 
@@ -30,7 +26,7 @@ public class Test {
         cashier = new Cashier(strategy);
         // 计算价格
         BigDecimal quote = cashier.quote(new BigDecimal(300));
-        logger.info("{}会员商品的最终价格为:{}", strategy.getType(), quote.doubleValue());
+        System.out.println(strategy.getType()+"会员商品的最终价格为:"+quote.doubleValue());
         return quote.doubleValue();
     }
 
@@ -41,12 +37,12 @@ public class Test {
         Cashier cashier = new Cashier(strategy);
         // 计算价格
         BigDecimal quote = cashier.quote(new BigDecimal(300));
-        logger.info("普通会员商品的最终价格为：{}", quote.doubleValue());
+        System.out.println("普通会员商品的最终价格为："+quote.doubleValue());
 
         strategy = new SuperVipBuyer();
         cashier = new Cashier(strategy);
         quote = cashier.quote(new BigDecimal(300));
-        logger.info("超级会员商品的最终价格为：{}", quote.doubleValue());
+        System.out.println("超级会员商品的最终价格为："+ quote.doubleValue());
         return quote.doubleValue();
     }
 }
