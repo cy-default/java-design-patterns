@@ -1,6 +1,7 @@
 package com.remotes.design.decorator;
 
 /**
+ * 装饰器模式
  * @author yuan.chen
  * @email chen.yuan135@chinaredstar.com
  * @Date 2019-06-10
