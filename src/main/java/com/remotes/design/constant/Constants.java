@@ -14,8 +14,19 @@ public class Constants {
      */
     public enum Strategy{
 
+        /**
+         * 专属会员
+         */
         ParticularlyVipBuyer("ParticularlyVipBuyer", "专属会员"),
+
+        /**
+         * 超级会员
+         */
         SuperVipBuyer("SuperVipBuyer", "超级会员"),
+
+        /**
+         * 普通会员
+         */
         VipBuyer("VipBuyer", "普通会员");
 
 
