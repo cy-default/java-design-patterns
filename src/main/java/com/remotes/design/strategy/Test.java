@@ -1,27 +1,27 @@
 package com.remotes.design.strategy;
 
+import com.remotes.design.constant.Constants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.util.List;
 
 /**
- * 测试类
  * @author yuan.chen
- * @email yuan.chen@ingeek.com
- * @company INGEEK
- * @Date 2019-05-14
+ * @email chen.yuan135@chinaredstar.com
+ * @Date 2019-06-11
  */
-@Service
-public class StrategyService {
+public class Test {
+    private static Logger logger = LoggerFactory.getLogger(Test.class);
 
-    Logger logger  = LoggerFactory.getLogger(StrategyService.class);
+    public static void main(String[] args) {
 
-    public double strategy(String buyerType) {
+        String buyerType = Constants.Strategy.ParticularlyVipBuyer.getCode();
+        strategy(buyerType);
+    }
+
+
+    public static double strategy(String buyerType) {
         // 创建上下文
         Cashier cashier = null;
         // 选择需要使用的策略对象
@@ -33,8 +33,7 @@ public class StrategyService {
         return quote.doubleValue();
     }
 
-
-    public double strategy2() {
+    public static double strategy2() {
         // 选择并创建需要使用的策略对象
         Buyer strategy = new VipBuyer();
         // 创建上下文
