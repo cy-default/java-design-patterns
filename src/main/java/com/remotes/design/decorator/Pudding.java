@@ -7,7 +7,7 @@ package com.remotes.design.decorator;
  * @email chen.yuan135@chinaredstar.com
  * @Date 2019-06-10
  */
-public class Pudding extends DrinkMilkTeaDecorator {
+public class Pudding extends DrinkMilkTeaMaterial {
 
 
     public Pudding(DrinkMilkTea drinkMilkTea) {

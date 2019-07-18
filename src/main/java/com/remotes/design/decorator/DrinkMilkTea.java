@@ -13,11 +13,11 @@ public interface DrinkMilkTea {
      * 这杯奶茶花了多少钱
      * @return
      */
-    public double totalPrice();
+    double totalPrice();
 
     /**
      * 这杯奶茶使用了什么材料
      * @return
      */
-    public String useMaterial();
+    String useMaterial();
 }

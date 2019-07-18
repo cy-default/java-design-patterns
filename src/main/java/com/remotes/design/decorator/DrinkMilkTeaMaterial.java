@@ -7,14 +7,14 @@ package com.remotes.design.decorator;
  * @Date 2019-06-10
  * 文章： https://www.jianshu.com/p/427342d3b5c0
  */
-public class DrinkMilkTeaDecorator implements DrinkMilkTea {
+public abstract class DrinkMilkTeaMaterial implements DrinkMilkTea {
 
     /**
      * 将顶层接口以构造参数的方式传递进来
      */
     private DrinkMilkTea drinkMilkTea;
 
-    public DrinkMilkTeaDecorator(DrinkMilkTea drinkMilkTea) {
+    public DrinkMilkTeaMaterial(DrinkMilkTea drinkMilkTea) {
         this.drinkMilkTea = drinkMilkTea;
     }
 

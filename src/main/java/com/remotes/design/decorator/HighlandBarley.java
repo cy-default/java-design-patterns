@@ -7,7 +7,7 @@ package com.remotes.design.decorator;
  * @email chen.yuan135@chinaredstar.com
  * @Date 2019-06-10
  */
-public class HighlandBarley extends DrinkMilkTeaDecorator {
+public class HighlandBarley extends DrinkMilkTeaMaterial {
 
     public HighlandBarley(DrinkMilkTea drinkMilkTea) {
         super(drinkMilkTea);
