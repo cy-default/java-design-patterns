@@ -17,7 +17,7 @@ public class StrategyConfig {
     private static Map<String, Buyer> result ;
 
     static {
-        result = new HashMap<>();
+        result = new HashMap<>(3);
         Buyer buyer = new ParticularlyVipBuyer();
         result.put(Constants.Strategy.ParticularlyVipBuyer.getCode(), buyer);
         buyer = new SuperVipBuyer();
