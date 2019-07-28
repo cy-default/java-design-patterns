@@ -12,8 +12,10 @@ public class CTO extends LeaveHandler {
         if(day<=3){
             System.out.println("CTO可以处理："+day+"天内的假期");
         }else{
-            // 如果他处理不了就向上传递请求
-            successor.disposeLeave(day);
+            if(successor!=null){
+                // 如果他处理不了就向上传递请求
+                successor.disposeLeave(day);
+            }
         }
     }
 }

@@ -3,6 +3,10 @@ package com.remotes.design;
 import org.junit.Test;
 
 import java.io.File;
+import java.sql.SQLOutput;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 
 /**
  * @author yuan.chen
@@ -24,9 +28,16 @@ public class IoTest {
         System.out.println(file.exists());
     }
 
+    @Test
+    public void t2(){
+        Long milliSecond = LocalDateTime.now().toInstant(ZoneOffset.of("+8")).toEpochMilli();
+        // 次日早上8点
+        Long milliSecond2 = LocalDate.now().plusDays(1).atStartOfDay().toInstant(ZoneOffset.of("+8")).toEpochMilli()+28800000;
 
-    public class StaticDemo1 {
-
+        System.out.println(milliSecond);
+        System.out.println(milliSecond2);
+        System.out.println(milliSecond2-milliSecond);
 
     }
+
 }

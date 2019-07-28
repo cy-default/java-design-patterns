@@ -12,8 +12,10 @@ public class HrBoss extends LeaveHandler {
         if(day<=5){
             System.out.println("HR老大处理："+day+"天内的假期");
         }else{
-            // 如果他处理不了就向上传递请求
-            successor.disposeLeave(day);
+            if(successor!=null){
+                // 如果他处理不了就向上传递请求
+                successor.disposeLeave(day);
+            }
         }
     }
 }

@@ -13,8 +13,10 @@ public class Lead extends LeaveHandler{
         if(day<=1){
             System.out.println("项目经理处理："+day+"天的假期");
         }else{
-            // 如果他处理不了就向上传递请求
-            successor.disposeLeave(day);
+            if(successor!=null){
+                // 如果他处理不了就向上传递请求
+                successor.disposeLeave(day);
+            }
         }
     }
 }
