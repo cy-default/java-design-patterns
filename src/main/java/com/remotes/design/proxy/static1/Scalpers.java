@@ -1,4 +1,4 @@
-package com.remotes.design.proxy.statics;
+package com.remotes.design.proxy.static1;
 
 /**
  * 黄牛

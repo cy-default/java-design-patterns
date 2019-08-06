@@ -4,9 +4,8 @@ import org.junit.Test;
 
 import java.io.File;
 import java.sql.SQLOutput;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.ZoneOffset;
+import java.time.*;
+import java.util.HashMap;
 
 /**
  * @author yuan.chen
@@ -31,13 +30,25 @@ public class IoTest {
     @Test
     public void t2(){
         Long milliSecond = LocalDateTime.now().toInstant(ZoneOffset.of("+8")).toEpochMilli();
-        // 次日早上8点
-        Long milliSecond2 = LocalDate.now().plusDays(1).atStartOfDay().toInstant(ZoneOffset.of("+8")).toEpochMilli()+28800000;
+    }
 
-        System.out.println(milliSecond);
-        System.out.println(milliSecond2);
-        System.out.println(milliSecond2-milliSecond);
 
+    @Test
+    public void t3(){
+        Byte bt = new Byte("1");
+        System.out.println(Cc.WAITING.getCode().equals(bt));
+
+        System.out.println("好".length());
+
+        System.out.println("XLSX".equalsIgnoreCase("Xlsx"));
+    }
+
+    @Test
+    public void t4(){
+        LocalDateTime tomorrow = LocalDateTime.of(LocalDate.now().plusDays(1), LocalTime.of(0,0));
+        LocalDateTime today = LocalDateTime.now();
+        Duration du = Duration.between(today,tomorrow);
+        System.out.println(du.getSeconds());
     }
 
 }

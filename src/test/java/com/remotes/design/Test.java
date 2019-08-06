@@ -16,9 +16,17 @@ import java.util.stream.Collectors;
 public class Test {
 
     public static void main(String[] args) {
-        join1();
 
+        try {
+            User user  = User.class.newInstance();
+            System.out.println(user);
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
     }
+
 
     public static void join1(){
         List<String> list = Arrays.asList("11","22","23");

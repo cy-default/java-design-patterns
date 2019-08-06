@@ -1,4 +1,4 @@
-package com.remotes.design.proxy.statics;
+package com.remotes.design.proxy.static1;
 
 /**
  * 代理模式， 定义一个买票的接口
